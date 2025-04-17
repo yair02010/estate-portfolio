@@ -1,8 +1,6 @@
     import { Container, Row, Col, Button, Card } from "react-bootstrap";
     import { Link } from "react-router-dom";
     import grandmaImage from "../assets/page2.jpg";
-    import "../styles/About.css";
-
     export default function About() {
     return (
         <section className="py-5 about-section">
