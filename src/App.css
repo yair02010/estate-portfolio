@@ -1,0 +1,96 @@
+/* ✅ Reset בסיסי */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9fafc;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ✅ ROOT – מרכז התוכן */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+/* ✅ תיקון רווחים מיותרים */
+footer {
+  margin-top: 0 !important;
+  padding-top: 2rem;
+}
+
+section:last-of-type {
+  margin-bottom: 0 !important;
+  padding-bottom: 2rem !important;
+}
+.cta-section {
+  margin-bottom: 0 !important;
+  padding-bottom: 2rem !important;
+}
+
+.cta-section p {
+  margin-bottom: 0 !important;
+}
+
+.cta-section button {
+  margin-bottom: 0 !important;
+}
+
+/* ✅ תוספת כללית – אפס מרווחים אחרונים לפני פוטר */
+.container,
+section,
+.row {
+  margin-bottom: 0 !important;
+}
+
+/* ✅ לוגו */
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+/* ✅ אנימציית לוגו */
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+/* ✅ כרטיסים */
+.card {
+  padding: 2em;
+}
+
+/* ✅ טקסט עזר */
+.read-the-docs {
+  color: #888;
+}
