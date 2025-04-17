@@ -13,7 +13,7 @@
             </Col>
             <Col md={6}>
                 <p className="mb-1">
-                📞 054-4977076 | ✉️ hlpgwtrwt@gmail.com — <strong>רות הלפגוט</strong><br />
+                📞 054-4977076 | ✉️ Signon150@gmail.com — <strong>רות הלפגוט</strong><br />
                 📞 052-7721100 | ✉️ israel33333@gmail.com — <strong>דייר עלי נגאר</strong>
                 </p>
             </Col>
