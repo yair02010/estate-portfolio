@@ -6,6 +6,7 @@
     import beitel from "../../assets/bitel2.png";
     import ariel from "../../assets/arial2.png";
     import jerushalem from "../../assets/jerushalem2.png";
+    import "../../styles/locations.css";
 
     export default function Locations() {
     const locations = [
@@ -13,57 +14,53 @@
         id: "barkan",
         name: "ברקן",
         description: '8 מגרשים של 500 מ"ר + 60 מגרשים של 330 מ"ר – טאבו ותב"ע מאושרת.',
-        image: barkanImg2
+        image: barkanImg2,
         },
         {
         id: "oranit",
         name: "אורנית",
         description: '300 דונם פרטיים עם חלוקה למגרשים בני 330 מ"ר – עם תב"ע מלאה.',
-        image: oranit
+        image: oranit,
         },
         {
         id: "ariel",
         name: "אריאל",
         description: 'קרקעות לבנייה רוויה + אזור תעשייה 40 דונם לתעשייה ולוגיסטיקה.',
-        image: ariel
+        image: ariel,
         },
         {
         id: "beitel",
         name: "בית אל",
         description: '60 דונם קרקע פרטית + 6 דונם לבנייה רוויה – מיקום מעולה.',
-        image: beitel
+        image: beitel,
         },
         {
         id: "jerusalem",
         name: "ירושלים",
         description: '950 מ"ר בנוי בשלוש קומות בצמוד לכותל – נדל"ן נדיר במיקום הקדוש בעולם.',
-        image: jerushalem
-        }
+        image: jerushalem,
+        },
     ];
 
     return (
-        <div dir="rtl">
-        <section className="py-5" style={{ backgroundColor: "#f4f6f9" }}>
+        <div dir="rtl" className="locations-section">
+        <section>
             <Container>
             <div className="text-center mb-5">
-                <h2 className="fw-bold text-primary display-5">אזורים בהם אנו פועלים</h2>
+                <h2 className="fw-bold text-primary display-5 locations-title">אזורים בהם אנו פועלים</h2>
                 <p className="text-muted fs-5">בחרו אזור כדי לצפות בפרטים והזדמנויות השקעה</p>
             </div>
 
             <Row className="g-4">
                 {locations.map((loc) => (
                 <Col md={6} lg={4} key={loc.id}>
-                    <Card className="shadow border-0 h-100">
-                    <div style={{ height: "250px", backgroundColor: "#fff", padding: "10px" }}>
+                    <Card className="location-card h-100">
+                    <div className="location-image-wrapper">
                         <Card.Img
                         variant="top"
                         src={loc.image}
                         alt={loc.name}
-                        style={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "contain"
-                        }}
+                        className="location-image"
                         />
                     </div>
                     <Card.Body className="d-flex flex-column">

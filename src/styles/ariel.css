@@ -1,0 +1,69 @@
+.ariel-page {
+    background-color: #f7f9fc;
+    direction: rtl;
+}
+
+.ariel-hero {
+    background-image: linear-gradient(to right, #1c2b36, #324a5e);
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.ariel-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.ariel-subtitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.ariel-section-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+
+.ariel-paragraph {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.ariel-list {
+    font-size: 1.1rem;
+    padding-right: 1.5rem;
+    color: #444;
+}
+
+.ariel-map-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+    .ariel-title {
+        font-size: 2rem;
+    }
+
+    .ariel-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .ariel-section-title {
+        font-size: 1.5rem;
+    }
+
+    .ariel-paragraph,
+    .ariel-list {
+        font-size: 1rem;
+    }
+}

@@ -1,0 +1,116 @@
+/* HERO SECTION */
+.home-hero {
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 120px 20px;
+    color: white;
+    direction: rtl;
+    text-align: center;
+}
+
+.home-hero::before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.home-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.home-hero-logo {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border: 4px solid white;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+.home-hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.home-hero-description {
+    font-size: 1.2rem;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    margin-top: 1rem;
+}
+
+.home-button-group {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* WHY US SECTION */
+.why-us-section h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #0d6efd;
+}
+
+.why-us-section .col-md-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.why-us-section h5 {
+    font-weight: bold;
+    margin-top: 0.5rem;
+}
+
+.why-us-section p {
+    max-width: 320px;
+    margin-top: 0.5rem;
+    color: #444;
+}
+
+/* CTA section alignment */
+.bg-dark.text-white {
+    text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .home-hero-logo {
+        width: 180px;
+        height: 180px;
+    }
+
+    .home-hero-title {
+        font-size: 2rem;
+    }
+
+    .home-hero-description {
+        font-size: 1rem;
+    }
+
+    .why-us-section .col-md-4 {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-hero {
+        padding: 80px 20px;
+    }
+
+    .home-button-group {
+        flex-direction: column;
+    }
+}

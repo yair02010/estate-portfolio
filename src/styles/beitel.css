@@ -1,0 +1,69 @@
+.beitel-page {
+    background-color: #f8f9fb;
+    direction: rtl;
+}
+
+.beitel-hero {
+    background-image: linear-gradient(to right, #3c4763, #5b7aa1);
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.beitel-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.beitel-subtitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.beitel-section-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+
+.beitel-paragraph {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.beitel-list {
+    font-size: 1.1rem;
+    padding-right: 1.5rem;
+    color: #444;
+}
+
+.beitel-map-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+/* מובייל */
+@media (max-width: 768px) {
+    .beitel-title {
+        font-size: 2rem;
+    }
+
+    .beitel-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .beitel-section-title {
+        font-size: 1.5rem;
+    }
+
+    .beitel-paragraph,
+    .beitel-list {
+        font-size: 1rem;
+    }
+}

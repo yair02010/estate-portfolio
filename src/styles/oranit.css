@@ -1,0 +1,69 @@
+.oranit-page {
+    background-color: #f7f9fc;
+    direction: rtl;
+}
+
+.oranit-hero {
+    background-image: linear-gradient(to right, #245e5e, #3c8b88);
+    background-size: cover;
+    background-position: center;
+    padding: 6rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.oranit-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.oranit-subtitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.oranit-section-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+
+.oranit-paragraph {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.oranit-list {
+    font-size: 1.1rem;
+    padding-right: 1.5rem;
+    color: #444;
+}
+
+.oranit-map-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+/* מובייל */
+@media (max-width: 768px) {
+    .oranit-title {
+        font-size: 2rem;
+    }
+
+    .oranit-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .oranit-section-title {
+        font-size: 1.5rem;
+    }
+
+    .oranit-paragraph,
+    .oranit-list {
+        font-size: 1rem;
+    }
+}

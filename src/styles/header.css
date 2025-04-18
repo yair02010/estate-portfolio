@@ -1,0 +1,60 @@
+.header-navbar {
+    background: linear-gradient(to right, #0D1B2A, #1B263B);
+    padding: 0.6rem 1rem;
+    margin: 0;
+    width: 100%;
+    z-index: 1000;
+    direction: rtl;
+}
+
+.header-logo {
+    height: 52px;
+    width: 52px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #fff;
+    padding: 4px;
+}
+
+.nav-links {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+}
+
+.nav-link-item {
+    color: white !important;
+    font-weight: 600;
+    font-size: 1rem;
+    position: relative;
+    padding-bottom: 5px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* אפקט מעבר - קו מתחת */
+.nav-link-item::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0%;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* כאשר עובר עם העכבר */
+.nav-link-item:hover::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}
+
+/* כאשר הקישור פעיל */
+.nav-link-item.active::after {
+    width: 100%;
+    left: 0;
+    right: auto;
+}

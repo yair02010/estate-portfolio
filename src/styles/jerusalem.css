@@ -1,0 +1,84 @@
+.jerusalem-page {
+    background-color: #f7f9fc;
+    direction: rtl;
+}
+
+.jerusalem-hero {
+    background-image: url("/images/kotel-building.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding: 6rem 1rem;
+    color: #fff;
+    text-align: center;
+}
+
+.jerusalem-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    /* רקע כהה לכותרת */
+    z-index: 0;
+}
+
+.jerusalem-hero>.container {
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.9);
+}
+.jerusalem-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.jerusalem-subtitle {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+}
+
+.jerusalem-section-title {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: #0d6efd;
+    margin-bottom: 1rem;
+}
+
+.jerusalem-paragraph {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.jerusalem-list {
+    font-size: 1.1rem;
+    padding-right: 1.5rem;
+    color: #444;
+}
+
+.jerusalem-map-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.05);
+}
+
+/* מובייל */
+@media (max-width: 768px) {
+    .jerusalem-title {
+        font-size: 2rem;
+    }
+
+    .jerusalem-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .jerusalem-section-title {
+        font-size: 1.5rem;
+    }
+
+    .jerusalem-paragraph,
+    .jerusalem-list {
+        font-size: 1rem;
+    }
+}

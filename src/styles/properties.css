@@ -1,0 +1,71 @@
+/* באנר עם תמונה + שכבת כהות + כותרת */
+.properties-banner {
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.properties-banner::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+    z-index: 0;
+}
+
+.properties-banner-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    position: relative;
+}
+
+/* עיצוב הסקשן של הכרטיסים */
+.properties-section {
+    background-color: #f4f6f9;
+    padding: 4rem 1rem;
+}
+
+/* עיצוב הכותרת והפסקה */
+.properties-intro {
+    text-align: center;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.properties-intro h2 {
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+.properties-intro p {
+    font-size: 1.15rem;
+    color: #6c757d;
+}
+
+/* מובייל */
+@media (max-width: 768px) {
+    .properties-banner-title {
+        font-size: 2rem;
+    }
+
+    .properties-section {
+        padding: 3rem 1rem;
+    }
+
+    .properties-intro h2 {
+        font-size: 1.6rem;
+    }
+
+    .properties-intro p {
+        font-size: 1rem;
+    }
+}

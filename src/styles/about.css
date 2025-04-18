@@ -1,0 +1,91 @@
+.about-section {
+    background-color: #f9fafc;
+    padding-top: 1in;
+    padding-bottom: 1in;
+    direction: rtl;
+    text-align: right;
+}
+
+.about-section p,
+.about-section h2,
+.about-section button {
+    direction: rtl;
+    text-align: right;
+}
+
+.about-image-wrapper {
+    max-width: 6in;
+    margin: 0 auto;
+}
+
+.about-image {
+    width: 100%;
+    height: 3.5in;
+    object-fit: cover;
+    border-radius: 0.3in;
+    box-shadow: 0 0.1in 0.2in rgba(0, 0, 0, 0.2);
+}
+
+.about-heading {
+    font-size: 1in;
+    line-height: 1.2;
+    margin-bottom: 0.5in;
+    color: #004ba8;
+}
+
+.about-section p {
+    font-size: 0.35in;
+    margin-bottom: 0.3in;
+    color: #444;
+}
+
+.about-section button {
+    font-size: 0.35in;
+    padding: 0.25in 0.6in;
+    border-radius: 1in;
+    background-color: #0d6efd;
+    border: none;
+}
+
+.about-section button:hover {
+    background-color: #0048bd;
+}
+
+/* מובייל */
+@media (max-width: 576px) {
+    .about-section {
+        padding: 0.6in 0.3in;
+    }
+
+    .about-image {
+        height: 3in;
+    }
+
+    .about-heading {
+        font-size: 0.7in;
+    }
+
+    .about-section p {
+        font-size: 0.3in;
+    }
+
+    .about-section button {
+        font-size: 0.3in;
+        padding: 0.2in 0.5in;
+    }
+}
+
+/* טאבלט */
+@media (min-width: 577px) and (max-width: 992px) {
+    .about-image {
+        height: 3.2in;
+    }
+
+    .about-heading {
+        font-size: 0.85in;
+    }
+
+    .about-section p {
+        font-size: 0.33in;
+    }
+}

@@ -1,55 +1,43 @@
     import { Link, NavLink } from "react-router-dom";
     import { Container, Nav, Navbar } from "react-bootstrap";
     import logo from "../assets/logo.png";
+    import "../styles/header.css"; // נוסיף גם CSS לשליטה מוחלטת
 
     export default function Header() {
+    const links = [
+        { to: "/", label: "דף הבית" },
+        { to: "/properties", label: "נכסים" },
+        { to: "/locations", label: "אזורים" },
+        { to: "/about", label: "אודות" },
+        { to: "/contact", label: "צור קשר" },
+    ];
+
     return (
         <Navbar
         expand="lg"
         sticky="top"
-        className="shadow-sm"
-        style={{
-            background: "linear-gradient(to right, #0D1B2A, #1B263B)",
-            padding: "0.6rem 1rem",
-            margin: "0",
-            width: "100%",
-            zIndex: 1000,
-        }}
+        className="header-navbar"
+        dir="rtl"
         >
         <Container className="d-flex justify-content-between align-items-center">
             <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2">
             <img
                 src={logo}
                 alt="יוסף 2000 מקרקעין"
-                style={{
-                height: "52px",
-                width: "52px",
-                objectFit: "cover",
-                borderRadius: "50%",
-                border: "2px solid white",
-                backgroundColor: "#fff",
-                padding: "4px",
-                }}
+                className="header-logo"
             />
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls="nav" style={{ backgroundColor: "white" }} />
+            <Navbar.Toggle aria-controls="main-nav" style={{ backgroundColor: "#fff" }} />
 
-            <Navbar.Collapse id="nav">
-            <Nav className="ms-auto text-center text-lg-start">
-                {[
-                { to: "/", label: "דף הבית" },
-                { to: "/properties", label: "נכסים" },
-                { to: "/locations", label: "אזורים" },
-                { to: "/about", label: "אודות" },
-                { to: "/contact", label: "צור קשר" },
-                ].map(({ to, label }) => (
+            <Navbar.Collapse id="main-nav">
+            <Nav className="nav-links ms-auto">
+                {links.map(({ to, label }) => (
                 <Nav.Link
-                    key={to}
                     as={NavLink}
                     to={to}
-                    className="text-white fw-semibold mx-2"
-                    style={{ fontSize: "1rem" }}
+                    key={to}
+                    className="nav-link-item"
                 >
                     {label}
                 </Nav.Link>
