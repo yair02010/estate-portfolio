@@ -1,42 +1,46 @@
+    import { useState } from "react";
     import { Link, NavLink } from "react-router-dom";
     import { Container, Nav, Navbar } from "react-bootstrap";
     import logo from "../assets/logo.png";
-    import "../styles/header.css"; // נוסיף גם CSS לשליטה מוחלטת
+    import "../styles/header.css"; // הקובץ שלך עם CSS
 
     export default function Header() {
-    const links = [
-        { to: "/", label: "דף הבית" },
-        { to: "/properties", label: "נכסים" },
-        { to: "/locations", label: "אזורים" },
-        { to: "/about", label: "אודות" },
-        { to: "/contact", label: "צור קשר" },
-    ];
+    const [expanded, setExpanded] = useState(false); // שליטה על פתיחה/סגירה
+
+    const closeNavbar = () => setExpanded(false); // פונקציה לסגירה
 
     return (
         <Navbar
         expand="lg"
-        sticky="top"
+        expanded={expanded}
         className="header-navbar"
-        dir="rtl"
+        sticky="top"
         >
         <Container className="d-flex justify-content-between align-items-center">
-            <Navbar.Brand as={Link} to="/" className="d-flex align-items-center gap-2">
-            <img
-                src={logo}
-                alt="יוסף 2000 מקרקעין"
-                className="header-logo"
-            />
+            <Navbar.Brand as={Link} to="/" onClick={closeNavbar}>
+            <img src={logo} alt="לוגו" className="header-logo" />
             </Navbar.Brand>
 
-            <Navbar.Toggle aria-controls="main-nav" style={{ backgroundColor: "#fff" }} />
+            <Navbar.Toggle
+            aria-controls="nav"
+            onClick={() => setExpanded(!expanded)}
+            style={{ backgroundColor: "white" }}
+            />
 
-            <Navbar.Collapse id="main-nav">
-            <Nav className="nav-links ms-auto">
-                {links.map(({ to, label }) => (
+            <Navbar.Collapse id="nav">
+            <Nav className="ms-auto nav-links">
+                {[
+                { to: "/", label: "דף הבית" },
+                { to: "/properties", label: "נכסים" },
+                { to: "/locations", label: "אזורים" },
+                { to: "/about", label: "אודות" },
+                { to: "/contact", label: "צור קשר" },
+                ].map(({ to, label }) => (
                 <Nav.Link
+                    key={to}
                     as={NavLink}
                     to={to}
-                    key={to}
+                    onClick={closeNavbar} // כאן הסגירה ברגע לחיצה
                     className="nav-link-item"
                 >
                     {label}

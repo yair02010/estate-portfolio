@@ -19,7 +19,7 @@
             <img src={grandmaImage} alt="רות הלפגוט" className="home-hero-logo" />
             <h1 className="home-hero-title">2000 יוסף מקרקעין</h1>
             <p className="home-hero-description">
-                חברת נדל״ן המתמחה בקרקעות פרטיות בבלעדיות, עם ניהול אישי של המנכ״לית רות הלפגוט –
+                חברת נדל״ן המתמחה בקרקעות פרטיות בבעלות פרטית שלנו, עם ניהול אישי של המנכ״לית רות הלפגוט –
                 יועצת נדל״ן בכירה עם ניסיון של למעלה מ־20 שנה בעולם המקרקעין בישראל.
             </p>
             <div className="home-button-group">

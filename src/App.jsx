@@ -12,6 +12,8 @@ import ArielLocation from "./pages/locations/ArielLocation.jsx";
 import BeitelLocation from "./pages/locations/BeitelLocation.jsx";
 import Location from "./pages/locations/Location.jsx";
 import JerusalemLocation from "./pages/locations/JerusalemLocation";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 export default function App() {
   const location = useLocation(); // מזהה את הכתובת הנוכחית
@@ -21,6 +23,7 @@ export default function App() {
     <>
       <Header />
       <main>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/properties" element={<Properties />} />

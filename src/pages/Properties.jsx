@@ -7,7 +7,6 @@
     export default function Properties() {
     return (
         <>
-        {/* באנר עליון */}
         <div
             className="properties-banner"
             style={{ backgroundImage: `url(${bannerImage})` }}
@@ -15,7 +14,6 @@
             <h1 className="properties-banner-title">נכסים בבלעדיות</h1>
         </div>
 
-        {/* אזור הכרטיסים */}
         <section className="properties-section">
             <Container>
             <div className="properties-intro">

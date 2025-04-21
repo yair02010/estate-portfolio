@@ -1,0 +1,78 @@
+/* propditi.css */
+
+/* כל הסקשן */
+section {
+    direction: rtl;
+    text-align: right;
+}
+
+/* תיבת תמונה */
+.property-image-container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.property-image-container img {
+    max-width: 100%;
+    max-height: 400px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+/* מפה */
+.property-map iframe {
+    width: 100%;
+    height: 250px;
+    border: 0;
+    border-radius: 12px;
+    margin-top: 1rem;
+}
+
+/* רשימת פרטים */
+.property-details ul {
+    padding: 0;
+    list-style: none;
+    font-size: 1.1rem;
+}
+
+.property-details ul li {
+    margin-bottom: 0.5rem;
+}
+
+/* כפתורים */
+.property-buttons {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.property-buttons .btn {
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 0.6rem 1.5rem;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+    .property-details-container {
+        text-align: center;
+        align-items: center;
+    }
+
+    .property-details ul {
+        text-align: center;
+    }
+
+    .property-buttons {
+        justify-content: center;
+    }
+
+    .property-map iframe {
+        height: 220px;
+    }
+}

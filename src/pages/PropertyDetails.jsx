@@ -3,6 +3,7 @@
     import { useState, useEffect } from "react";
     import { properties } from "../data/properties";
     import PropertyCard from "../components/PropertyCard";
+    import "../styles/propditi.css";
 
     export default function PropertyDetails() {
     const { id } = useParams();
@@ -49,44 +50,16 @@
             <Container className="mb-5">
             <Row className="g-5 align-items-start">
                 <Col md={6}>
-                <div
-                    style={{
-                    backgroundColor: "#fff",
-                    padding: "10px",
-                    borderRadius: "10px",
-                    boxShadow: "0 0 10px rgba(0,0,0,0.1)",
-                    textAlign: "center"
-                    }}
-                >
+                <div className="property-image-container">
                     <img
                     src={property.image}
                     alt={property.title}
-                    style={{
-                        maxWidth: "100%",
-                        maxHeight: "400px", // ✅ מגבלה לגובה
-                        height: "auto",
-                        objectFit: "contain",
-                        borderRadius: "8px"
-                    }}
+                    className="img-fluid"
                     />
-                </div>
-
-                <div className="mt-4">
-                    <iframe
-                    title="Google Map"
-                    src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                        property.location
-                    )}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
-                    width="100%"
-                    height="250"
-                    style={{ border: 0, borderRadius: "12px" }}
-                    allowFullScreen=""
-                    loading="lazy"
-                    ></iframe>
                 </div>
                 </Col>
 
-                <Col md={6}>
+                <Col md={6} className="property-details-container">
                 <h2 className="text-primary fw-bold mb-3">{property.title}</h2>
                 <ul className="list-unstyled fs-5">
                     <li>
@@ -108,7 +81,7 @@
                     </li>
                 </ul>
 
-                <div className="d-flex flex-wrap gap-3 mt-4">
+                <div className="property-buttons">
                     <Button
                     variant="success"
                     size="lg"
@@ -129,7 +102,7 @@
                         navigator.share({
                         title: property.title,
                         text: `בדקו את הנכס: ${property.title}`,
-                        url: window.location.href
+                        url: window.location.href,
                         })
                     }
                     >
@@ -138,6 +111,21 @@
                 </div>
                 </Col>
             </Row>
+
+            {/* מפה - עכשיו בסוף אחרי התוכן */}
+            <div className="property-map mt-5">
+                <iframe
+                title="Google Map"
+                src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                    property.location
+                )}&t=&z=14&ie=UTF8&iwloc=&output=embed`}
+                width="100%"
+                height="250"
+                allowFullScreen=""
+                loading="lazy"
+                style={{ border: 0, borderRadius: "12px" }}
+                ></iframe>
+            </div>
             </Container>
         </section>
 
