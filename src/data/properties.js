@@ -1,12 +1,20 @@
-import { image } from "framer-motion/client";
-import barkanImg2 from "../assets/barkan.jpg";
-import barkanImg from "../assets/barkan2.jpg";
-import roshahin from "../assets/roshahain.jpg";
-import oranit from "../assets/oranit.png";
-import beitel from "../assets/beitel.png";
-import ariel from "../assets/arial.png";
-import jerushalem from "../assets/jerushalem.png";
-export const properties = [
+    import barkanImg2 from "../assets/barkan.jpg";
+    import barkanImg from "../assets/barkan2.jpg";
+    import roshahin from "../assets/roshahain.jpg";
+    import oranit from "../assets/oranit.png";
+    import beitel from "../assets/beitel.png";
+    import ariel from "../assets/arial.png";
+    import jerushalem from "../assets/jerushalem.png";
+
+    import barkan500a from "../assets/barkan3.jpg";
+    import barkan500b from "../assets/barkan4.jpg";
+    import barkan500c from "../assets/barkan5.jpg";
+    import barkan330a from "../assets/barkan7.jpg";
+    import barkan330b from "../assets/barkan9.jpg";
+    import barkan330c from "../assets/barkan10.jpg";
+    import barkan330d from "../assets/barkan11.jpg";
+
+    export const properties = [
     {
         id: 'barkan-500',
         title: 'ברקן – 8 מגרשים של 500 מ"ר',
@@ -17,8 +25,7 @@ export const properties = [
         price: 1800000,
         status: 'כולל פיתוח',
         exclusive: true,
-        image: barkanImg2
-
+        images: [barkan500a, barkan500b, barkan500c]
     },
     {
         id: 'barkan-330',
@@ -30,8 +37,7 @@ export const properties = [
         price: 1200000,
         status: 'כולל פיתוח',
         exclusive: true,
-        image: barkanImg
-
+        images: [barkan330a, barkan330b, barkan330c, barkan330d]
     },
     {
         id: 'oranit',
@@ -54,7 +60,7 @@ export const properties = [
         price: 1600000,
         status: 'מיקום מעולה',
         exclusive: true,
-        image:beitel
+        image: beitel
     },
     {
         id: 'ariel-industrial',
@@ -64,7 +70,7 @@ export const properties = [
         size: 1000,
         price: 1600000,
         status: 'טאבו + תב"ע',
-        exclusive: true, 
+        exclusive: true,
         image: ariel
     },
     {
@@ -98,6 +104,6 @@ export const properties = [
         price: 1900000,
         status: 'תב"ע לוגיסטיקה ותעשייה',
         exclusive: true,
-        image:beitel
+        image: beitel
     }
     ];

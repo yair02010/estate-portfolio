@@ -13,10 +13,11 @@ import BeitelLocation from "./pages/locations/BeitelLocation.jsx";
 import Location from "./pages/locations/Location.jsx";
 import JerusalemLocation from "./pages/locations/JerusalemLocation";
 import ScrollToTop from "./components/ScrollToTop";
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 export default function App() {
-  const location = useLocation(); // מזהה את הכתובת הנוכחית
+  const location = useLocation(); 
   const isHomePage = location.pathname === "/";
 
   return (

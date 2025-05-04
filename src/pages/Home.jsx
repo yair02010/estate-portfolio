@@ -1,7 +1,7 @@
-    // src/pages/Home.jsx
     import { Container, Row, Col, Button, Card } from "react-bootstrap";
     import { Link } from "react-router-dom";
-    import { FaRegHandshake, FaLandmark, FaMapMarkedAlt, FaStar, FaWhatsapp } from "react-icons/fa";
+    import { FaMapMarkedAlt, FaLandmark, FaRegHandshake, FaWhatsapp } from "react-icons/fa";
+    import Slider from "react-slick";
     import grandmaImage from "../assets/logo.png";
     import back1 from "../assets/back2.jpg";
     import digitalImage from "../assets/vila.jpg";
@@ -10,6 +10,15 @@
 
     export default function Home() {
     const featured = properties.slice(0, 3);
+
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 400,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false
+    };
 
     return (
         <div dir="rtl">
@@ -23,36 +32,20 @@
                 יועצת נדל״ן בכירה עם ניסיון של למעלה מ־20 שנה בעולם המקרקעין בישראל.
             </p>
             <div className="home-button-group">
-                <Link to="/properties">
-                <Button size="lg" variant="light">צפה בנכסים</Button>
-                </Link>
-                <Link to="/contact">
-                <Button size="lg" variant="outline-light">צור קשר</Button>
-                </Link>
+                <Link to="/properties"><Button size="lg" variant="light">צפה בנכסים</Button></Link>
+                <Link to="/contact"><Button size="lg" variant="outline-light">צור קשר</Button></Link>
             </div>
             </div>
         </div>
 
         {/* WHY US */}
-        <section className="py-5 bg-light why-us-section">
+        <section className="py-5 bg-light">
             <Container>
             <h2 className="text-center text-primary fw-bold mb-5">למה לבחור ב-2000 יוסף מקרקעין?</h2>
             <Row className="g-4 text-center justify-content-center">
-                <Col xs={12} md={4}>
-                <FaMapMarkedAlt size={40} className="mb-3 text-primary" />
-                <h5>קרקעות בטאבו</h5>
-                <p>התמקדות בקרקעות פרטיות בלבד עם רישום מלא בטאבו ובעלות משפטית ברורה.</p>
-                </Col>
-                <Col xs={12} md={4}>
-                <FaLandmark size={40} className="mb-3 text-primary" />
-                <h5>תב״ע מאושרת</h5>
-                <p>כל הנכסים כוללים תב״ע תקפה ומעודכנת – מוכנים לבנייה מיידית.</p>
-                </Col>
-                <Col xs={12} md={4}>
-                <FaRegHandshake size={40} className="mb-3 text-primary" />
-                <h5>שירות אישי ומקצועי</h5>
-                <p>ליווי מקצועי מתחילת הדרך ועד סיום העסקה – עם שקיפות, זמינות ואמינות מלאה.</p>
-                </Col>
+                <Col md={4}><FaMapMarkedAlt size={40} className="mb-3 text-primary" /><h5>קרקעות בטאבו</h5><p>קרקעות פרטיות עם רישום בטאבו ובעלות ברורה.</p></Col>
+                <Col md={4}><FaLandmark size={40} className="mb-3 text-primary" /><h5>תב״ע מאושרת</h5><p>כל הנכסים כוללים תב״ע תקפה ומעודכנת.</p></Col>
+                <Col md={4}><FaRegHandshake size={40} className="mb-3 text-primary" /><h5>שירות אישי</h5><p>ליווי מלא – עם שקיפות, זמינות ואמינות.</p></Col>
             </Row>
             </Container>
         </section>
@@ -61,15 +54,10 @@
         <section className="py-5" style={{ backgroundColor: "#f3f7fb" }}>
             <Container>
             <Row className="align-items-center g-4">
-                <Col md={6}>
-                <img src={digitalImage} alt="שיווק דיגיטלי" className="img-fluid rounded shadow" />
-                </Col>
+                <Col md={6}><img src={digitalImage} alt="שיווק דיגיטלי" className="img-fluid rounded shadow" /></Col>
                 <Col md={6}>
                 <h3 className="fw-bold text-primary mb-3">שיווק דיגיטלי מתקדם</h3>
-                <p className="lead">
-                    החברה משווקת כל נכס בפלטפורמות המובילות – בפייסבוק, אינסטגרם ולוחות נדל״ן נבחרים.
-                    כל שיווק נעשה במקצועיות, עם תוכן איכותי וחשיפה רחבה ומדויקת לקהל רלוונטי.
-                </p>
+                <p className="lead">שיווק מקצועי בפייסבוק, אינסטגרם ולוחות נדל״ן, עם תוכן איכותי וחשיפה ממוקדת.</p>
                 </Col>
             </Row>
             </Container>
@@ -95,17 +83,31 @@
                 {featured.map((property) => (
                 <Col md={4} key={property.id}>
                     <Card className="h-100 shadow-sm border-0 rounded-4">
-                    <Card.Img
-                        variant="top"
-                        src={property.image}
-                        alt={property.title}
-                        style={{ height: "200px", objectFit: "cover" }}
-                    />
+                    <div style={{ height: "220px", overflow: "hidden", borderTopLeftRadius: "0.5rem", borderTopRightRadius: "0.5rem" }}>
+                        {Array.isArray(property.images) ? (
+                        <Slider {...sliderSettings}>
+                            {property.images.map((img, idx) => (
+                            <img
+                                key={idx}
+                                src={img}
+                                alt={`slide-${idx}`}
+                                style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                            />
+                            ))}
+                        </Slider>
+                        ) : (
+                        <Card.Img
+                            src={property.image}
+                            alt={property.title}
+                            style={{ width: "100%", height: "220px", objectFit: "cover" }}
+                        />
+                        )}
+                    </div>
                     <Card.Body>
                         <Card.Title className="fw-semibold">{property.title}</Card.Title>
                         <Card.Text className="text-muted">
                         📍 {property.location} <br />
-                        💰 ₪{property.price.toLocaleString()}
+                        💰 {typeof property.price === "number" ? `₪${property.price.toLocaleString()}` : property.price}
                         </Card.Text>
                         <Link to={`/properties/${property.id}`}>
                         <Button variant="primary" size="sm">צפה</Button>
@@ -124,7 +126,7 @@
         </section>
 
         {/* CTA */}
-        <section className="py-5 bg-dark text-white" style={{ marginBottom: 0 }}>
+        <section className="py-5 bg-dark text-white">
             <Container className="text-center">
             <h3 className="fw-bold mb-3">מחפשים השקעה חכמה ובטוחה?</h3>
             <p className="lead">דברו איתנו בוואטסאפ – ייעוץ ראשוני וללא התחייבות.</p>

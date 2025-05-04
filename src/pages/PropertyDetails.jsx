@@ -3,6 +3,7 @@
     import { useState, useEffect } from "react";
     import { properties } from "../data/properties";
     import PropertyCard from "../components/PropertyCard";
+    import Slider from "react-slick";
     import "../styles/propditi.css";
 
     export default function PropertyDetails() {
@@ -28,6 +29,16 @@
         .filter((p) => p.location === property.location && p.id !== property.id)
         .slice(0, 3);
 
+    const images = property.images || (property.image ? [property.image] : []);
+    const sliderSettings = {
+        dots: true,
+        infinite: true,
+        speed: 400,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+    };
+
     return (
         <>
         {/* פופאפ על קבוצת רכישה */}
@@ -51,11 +62,17 @@
             <Row className="g-5 align-items-start">
                 <Col md={6}>
                 <div className="property-image-container">
-                    <img
-                    src={property.image}
-                    alt={property.title}
-                    className="img-fluid"
-                    />
+                    <Slider {...sliderSettings}>
+                    {images.map((img, idx) => (
+                        <img
+                        key={idx}
+                        src={img}
+                        alt={`property-img-${idx}`}
+                        className="img-fluid rounded"
+                        style={{ maxHeight: "400px", objectFit: "cover", width: "100%" }}
+                        />
+                    ))}
+                    </Slider>
                 </div>
                 </Col>
 
@@ -74,14 +91,17 @@
                     </li>
                     )}
                     <li>
-                    <strong>💰 מחיר:</strong> ₪{property.price.toLocaleString()}
+                    <strong>💰 מחיר:</strong>{" "}
+                    {typeof property.price === "number"
+                        ? `₪${property.price.toLocaleString()}`
+                        : property.price}
                     </li>
                     <li>
                     <strong>📝 סטטוס:</strong> {property.status}
                     </li>
                 </ul>
 
-                <div className="property-buttons">
+                <div className="property-buttons d-flex flex-column gap-3 mt-4">
                     <Button
                     variant="success"
                     size="lg"
